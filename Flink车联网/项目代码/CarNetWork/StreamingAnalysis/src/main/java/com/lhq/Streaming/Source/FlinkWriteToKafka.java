@@ -50,6 +50,7 @@ public class FlinkWriteToKafka {
         );
         //5 设置数据源
         Source.addSink(producer);
+        Source.print();
         //6 执行流处理环境
         try {
             env.execute();

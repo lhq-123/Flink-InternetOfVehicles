@@ -24,7 +24,7 @@ public class ToHiveSink extends RichSinkFunction<VehicleDataObj> {
     private String tableName;
 
     private static String driver = "org.apache.hive.jdbc.HiveDriver";
-    private static String url = "jdbc:hive2://node03:10000/itcast_ods";
+    private static String url = "jdbc:hive2://Flink01:10000";
 
     private static Connection conn = null;
     private static Statement stmt = null;

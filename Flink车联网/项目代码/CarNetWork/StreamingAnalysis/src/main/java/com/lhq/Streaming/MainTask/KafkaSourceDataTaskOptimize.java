@@ -1,5 +1,6 @@
 package com.lhq.Streaming.MainTask;
 
+import com.lhq.Streaming.Sink.ToHBaseDetailSinkOptimize;
 import com.lhq.Streaming.Sink.ToHBaseSinkOptimize;
 import com.lhq.Streaming.Utils.JsonParseUtil;
 import com.lhq.Streaming.Utils.VehicleDataObj;
@@ -37,7 +38,7 @@ public class KafkaSourceDataTaskOptimize extends BaseTask{
                 "yyyyMMdd"
         );
         errorDataStream.map(VehicleDataObj::toHiveString).addSink(errorDataSink);
-        //TODO 10）将正常的数据写入hdfs(提供给离线分析)
+        //TODO 10）将正常的数据写入hdfs(离线分析)
         StreamingFileSink<String> rightDataSink = createSink(
                 "vehicle",
                 ".txt",
@@ -45,9 +46,16 @@ public class KafkaSourceDataTaskOptimize extends BaseTask{
                 "yyyyMMdd"
         );
         rightDataStream.map(VehicleDataObj::toHiveString).addSink(rightDataSink);
-        //TODO 11）将正确的数据写入到HBase(提供给实时分析)
-        rightDataStream.addSink(new ToHBaseSinkOptimize("vehicle_rightdata"));
-        //TODO 12）启动实时任务
+        //TODO 11）将正确的数据写入到HBase(实时分析)
+        ToHBaseSinkOptimize vehicle_rightdataSink = new ToHBaseSinkOptimize("vehicle_rightdata");
+        rightDataStream.addSink(vehicle_rightdataSink);
+
+        //TODO 12）将正确数据中经常用于分析的字段提取出来保存到一个hbase独立的表中，这个表的字段要远远小于正常数据宽表的字段数量
+        //将来与Phoenix整合以后，在可视化页面工具中分析查询hbase表数据
+        ToHBaseDetailSinkOptimize vehicle_rightdata_detailSink = new ToHBaseDetailSinkOptimize("vehicle_rightdata_detail");
+        rightDataStream.addSink(vehicle_rightdata_detailSink);
+        //TODO ）启动实时任务
+
         env.execute();
     }
 }

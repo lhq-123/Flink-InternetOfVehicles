@@ -1,4 +1,16 @@
-Phoenix中创建HBase二级索引表"vehicle_rightdata"
+[TOC]
+
+## 原始数据落地HBase时在Phoenix中创建映射表跟视图
+
+HBase里面只有rowkey作为一级索引，如果要对库里的非rowkey字段进行数据检索和查询，往往要通过MapReduce/Spark等分布式计算框架进行，硬件资源消耗和时间延迟都会比较高。
+
+为了HBase的数据查询更高效、适应更多的场景， 诸如使用非rowkey字段检索也能做到秒级响应，或者支持各个字段进行模糊查询和多字段组合查询等， 因此需要在HBase上面构建二级索引， 以满足现实中更复杂多样的业务需求
+
+### Phoenix中创建HBase二级索引表
+
+原始数据实时ETL创建好表，且表中存储了大量车辆信息数据，为了提高查询的效率和查询维度，通过phoenix建立hbase的二级索引方式实现。
+
+HBase中已存在“itcast src”表，因此我们需要在phoenix中创建对应hbase的表，此表创建好二级索引，我们就可以通过除rowkey外的其他列进行高效的组合查询
 
 ```sql
 create table if not exists "vehicle_rightdata"(
@@ -239,10 +251,19 @@ PK VARCHAR PRIMARY KEY,
 "cf"."vacBrkPRmu" VARCHAR,
 "cf"."processTime" VARCHAR
 )
+-- 要让phoenix中建立的表能映射hbase中的表，需要禁用列映射规则（会降低查询性能）
 column_encoded_bytes=0;
 ```
 
-Phoenix中创建HBase二级索引视图"vehicle_rightdata"
+### Phoenix中创建HBase二级索引视图
+
+一般情况在phoenix关联hbase表，不使用建表方式，有2种原因：
+
+- 查询性能低
+
+  - 删除phoenix表，也会把hbase中被映射的表删除(重要，容易造成数据丢失)
+
+  - 删除视图时，实际的表数据不受影响。但是，该视图的索引数据将被删除
 
 ```sql
 create view if not exists "vehicle_rightdata"(
@@ -482,6 +503,38 @@ pk VARCHAR PRIMARY KEY,
 "cf"."vehPwrlim" VARCHAR,
 "cf"."vehCfgInfo" VARCHAR,
 "cf"."vacBrkPRmu" VARCHAR,
+"cf"."processTime" VARCHAR
+);
+```
+
+### 创建二级索引
+
+建立global index，生产环境数据分布在多个region上,由于创建的视图，数据写入hbase数据的性能已优化，需要查询效率高，因此选择全局索引
+
+```sql
+create index "vehicle_rightdata_index" on "vehicle_rightdata"("cf"."vin", "cf"."terminalTime", "cf"."soc") ;
+```
+
+### 车辆明细数据表及视图
+
+创建hbase车辆指标即席查询明细表：
+
+```sql
+create "vehicle_rightdata_detail","cf"
+```
+
+创建phoenix关联hbase查询明细视图：
+
+```sql
+create view if not exists "vehicle_rightdata_detail"(
+rowKey VARCHAR PRIMARY KEY,
+"cf"."vin" VARCHAR,
+"cf"."terminalTime" VARCHAR,
+"cf"."currentElectricity" VARCHAR,
+"cf"."remainPower" VARCHAR,
+"cf"."fuelConsumption100km" VARCHAR,
+"cf"."engineSpeed" VARCHAR,
+"cf"."vehicleSpeed" VARCHAR,
 "cf"."processTime" VARCHAR
 );
 ```

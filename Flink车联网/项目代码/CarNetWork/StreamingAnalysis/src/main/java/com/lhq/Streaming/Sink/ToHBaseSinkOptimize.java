@@ -13,18 +13,21 @@ import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 /**
  * @author liu
  * @Create 2022-11-21
- * @Description   数据写入hbase优化
+ * @Description   正确数据写入hbase优化
  */
 public class ToHBaseSinkOptimize extends RichSinkFunction<VehicleDataObj> {
-    private Logger logger = LoggerFactory.getLogger("SourceDataHBaseSinkOptimize");
-
+    private Logger logger = LoggerFactory.getLogger("ToHBaseSinkOptimize");
+    //要写入数据的表名
     private String tableName;
     private Connection conn = null;
     // hbase客户端中的数据写缓存对象
     private BufferedMutator mutator = null;
+    //定义列簇
     private String cf = "cf";
 
     public ToHBaseSinkOptimize(String tableName) {
@@ -65,9 +68,14 @@ public class ToHBaseSinkOptimize extends RichSinkFunction<VehicleDataObj> {
      */
     @Override
     public void invoke(VehicleDataObj vehicleDataObj, Context context) throws Exception {
-        Put put = hbasePut(vehicleDataObj);
-        mutator.mutate(put);
-        mutator.flush();
+        try {
+            Put put = setDataSourcePut(vehicleDataObj);
+            mutator.mutate(put);
+            //指定时间内的数据强制刷写到hbase
+            mutator.flush();
+        } catch (IOException ex) {
+            logger.error("写入到hbase失败："+ex.getMessage());
+        }
     }
 
     /**
@@ -75,7 +83,7 @@ public class ToHBaseSinkOptimize extends RichSinkFunction<VehicleDataObj> {
      * @param vehicleDataObj
      * @return
      */
-    private Put hbasePut(VehicleDataObj vehicleDataObj){
+    private Put setDataSourcePut(VehicleDataObj vehicleDataObj){
         // rowkey设计:保证rowKey不会有序
         Put put = new Put(Bytes.toBytes(vehicleDataObj.getVin() + "_" + (Long.MAX_VALUE - vehicleDataObj.getTerminalTimeStamp())));
         put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("vin"), Bytes.toBytes(vehicleDataObj.getVin()));
@@ -312,7 +320,7 @@ public class ToHBaseSinkOptimize extends RichSinkFunction<VehicleDataObj> {
         if (vehicleDataObj.getVehPwrlim() != -999999) put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("vehPwrlim"), Bytes.toBytes(String.valueOf(vehicleDataObj.getVehPwrlim())));
         if (!vehicleDataObj.getVehCfgInfo().isEmpty()) put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("vehCfgInfo"), Bytes.toBytes(vehicleDataObj.getVehCfgInfo()));
         if (vehicleDataObj.getVacBrkPRmu() != -999999) put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("vacBrkPRmu"), Bytes.toBytes(vehicleDataObj.getVacBrkPRmu()));
-        put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("processTime"), Bytes.toBytes(DateUtil.getCurrentDate()));
+        put.addColumn(Bytes.toBytes(cf), Bytes.toBytes("processTime"), Bytes.toBytes(DateUtil.getCurrentDateTime()));
         return put;
     }
 
