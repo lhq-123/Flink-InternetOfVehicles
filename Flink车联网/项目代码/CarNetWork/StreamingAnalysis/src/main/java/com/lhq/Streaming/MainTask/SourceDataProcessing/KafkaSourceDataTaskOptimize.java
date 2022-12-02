@@ -1,7 +1,8 @@
-package com.lhq.Streaming.MainTask;
+package com.lhq.Streaming.MainTask.SourceDataProcessing;
 
-import com.lhq.Streaming.Sink.ToHBaseDetailSinkOptimize;
-import com.lhq.Streaming.Sink.ToHBaseSinkOptimize;
+import com.lhq.Streaming.MainTask.BaseTask;
+import com.lhq.Streaming.Sink.SourceDataSink.ToHBaseDetailSinkOptimize;
+import com.lhq.Streaming.Sink.SourceDataSink.ToHBaseSinkOptimize;
 import com.lhq.Streaming.Utils.JsonParseUtil;
 import com.lhq.Streaming.Utils.VehicleDataObj;
 import org.apache.commons.lang.StringUtils;
@@ -18,7 +19,7 @@ import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSin
  * @Description
  *    调用flink工具类初始化task作业
  */
-public class KafkaSourceDataTaskOptimize extends BaseTask{
+public class KafkaSourceDataTaskOptimize extends BaseTask {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = getEnv(KafkaSourceDataTask.class.getSimpleName());
         DataStream<String> kafkaDataStreamSource = createKafkaStream(SimpleStringSchema.class);

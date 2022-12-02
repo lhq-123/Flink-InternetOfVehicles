@@ -1,4 +1,4 @@
-package com.lhq.Streaming.Sink;
+package com.lhq.Streaming.Sink.SourceDataSink;
 
 import com.lhq.Streaming.Utils.ConfigLoader;
 import com.lhq.Streaming.Utils.DateUtil;

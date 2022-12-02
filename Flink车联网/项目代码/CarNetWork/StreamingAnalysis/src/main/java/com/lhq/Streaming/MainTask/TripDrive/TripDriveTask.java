@@ -1,8 +1,9 @@
-package com.lhq.Streaming.MainTask;
+package com.lhq.Streaming.MainTask.TripDrive;
 
+import com.lhq.Streaming.MainTask.BaseTask;
 import com.lhq.Streaming.Watermark.TripDriveWatermark;
 import com.lhq.Streaming.Function.TripDriveSampleWindowFunction;
-import com.lhq.Streaming.Sink.TripDriveSampleToHBaseSink;
+import com.lhq.Streaming.Sink.TripDriveDataSink.TripDriveSampleToHBaseSink;
 import com.lhq.Streaming.Utils.JsonParseUtil;
 import com.lhq.Streaming.Utils.VehicleDataObj;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
@@ -22,7 +23,7 @@ import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
  *  2）消费kafka数据过滤出来驾驶行程数据，实时的写入到hbase表中
  *
  */
-public class TripDriveTask extends BaseTask{
+public class TripDriveTask extends BaseTask {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
         //TODO 1）初始化流式环境
         StreamExecutionEnvironment env = getEnv(TripDriveTask.class.getSimpleName());

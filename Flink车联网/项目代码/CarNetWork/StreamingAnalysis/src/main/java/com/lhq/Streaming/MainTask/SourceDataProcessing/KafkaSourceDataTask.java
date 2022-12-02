@@ -1,5 +1,6 @@
-package com.lhq.Streaming.MainTask;
+package com.lhq.Streaming.MainTask.SourceDataProcessing;
 
+import com.lhq.Streaming.MainTask.BaseTask;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.api.java.utils.ParameterTool;

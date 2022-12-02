@@ -1,5 +1,6 @@
 package com.lhq.Streaming.MainTask;
 
+import com.lhq.Streaming.MainTask.SourceDataProcessing.KafkaSourceDataTask;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SimpleStringEncoder;
@@ -78,7 +79,7 @@ public abstract class BaseTask {
         //  TODO 4.8）设置检查点的存储位置，使用rocketDBStateBackend，存储本地+hdfs分布式文件系统，可以进行增量检查点
         String hdfsUri = parameterTool.getRequired("hdfsUri");
         env.setStateBackend(new HashMapStateBackend());
-        env.getCheckpointConfig().setCheckpointStorage(new FileSystemCheckpointStorage(hdfsUri+"/flink/checkpoint/"+KafkaSourceDataTask.class.getSimpleName()));
+        env.getCheckpointConfig().setCheckpointStorage(new FileSystemCheckpointStorage(hdfsUri+"/flink/checkpoint/"+ KafkaSourceDataTask.class.getSimpleName()));
         //TODO 5）设置任务的重启策略（固定延迟重启策略、失败率重启策略、无重启策略）
         //  TODO 5.1）如果开启了checkpoint，默认不停的重启，没有开启checkpoint，无重启策略
         env.setRestartStrategy(RestartStrategies.fallBackRestart());
@@ -114,6 +115,7 @@ public abstract class BaseTask {
         );
         //  TODO 6.7）设置自动递交offset保存到检查点
         kafkaConsumer.setCommitOffsetsOnCheckpoints(true);
+        kafkaConsumer.setStartFromEarliest();
         //TODO 7）将kafka消费者对象添加到环境中
         DataStreamSource streamSource = env.addSource(kafkaConsumer);
         //返回消费到的数据
