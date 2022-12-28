@@ -1,7 +1,7 @@
 # Flink_Internet-of-Vehicles
 基于Flink的车联网实时数据平台
 
-![Snipaste_2022-11-27_15-25-28](assets\Snipaste_2022-11-27_15-25-28.png)
+![Snipaste_2022-11-27_15-25-28](assets/Snipaste_2022-11-27_15-25-28.png)
 
 ```sql
 StreamingAnalysis
