@@ -22,7 +22,7 @@ SourceDataProcess模块下的cn.lhq.flink.source.Collection包中的FlinkWriteTo
 
 根据Kafka中的数据进行实时ETL过滤，对数据进行划分，并将划分的数据分别落地到不同的数据存储组件中
 
-![Snipaste_2022-11-19_18-12-23](assets\Snipaste_2022-11-19_18-12-23.png)
+![Snipaste_2022-11-19_18-12-23](assets/Snipaste_2022-11-19_18-12-23.png)
 
 在对原始数据做处理的时候，需要引入一些工具类对数据进行处理，比如日期处理，配置文件加载等，最后再对JSON数据进行解析
 
@@ -35,7 +35,7 @@ JSON解析工具:StreamingAnalysis模块com.lhq.Utils.JsonParseUtil.java
 
 ## ETL流程
 
-![原始数据实时ETL](assets\原始数据实时ETL.png)
+![原始数据实时ETL](assets/原始数据实时ETL.png)
 
 ```properties
 1.创建流式环境，设置检查点、kafka分区发现、任务重启策略，数据积压
