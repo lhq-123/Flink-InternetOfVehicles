@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="OnlineAnalysis" />
         <module name="SourceDataProcess" />
-        <module name="OffLineBatchAnalysis" />
-        <module name="StreamingAnalysis" />
+        <module name="OfflineAnalysis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

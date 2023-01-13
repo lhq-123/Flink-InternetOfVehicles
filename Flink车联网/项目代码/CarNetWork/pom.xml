@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.itcast</groupId>
+    <groupId>com.alex</groupId>
     <artifactId>CarNetWork</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>SourceDataProcess</module>
-        <module>StreamingAnalysis</module>
-        <module>OffLineBatchAnalysis</module>
+        <module>OnlineAnalysis</module>
+        <module>OfflineAnalysis</module>
     </modules>
     <packaging>pom</packaging>
 
