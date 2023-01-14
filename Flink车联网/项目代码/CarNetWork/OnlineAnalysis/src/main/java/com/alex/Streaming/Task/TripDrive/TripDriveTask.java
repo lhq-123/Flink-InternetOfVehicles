@@ -2,10 +2,10 @@ package com.alex.Streaming.Task.TripDrive;
 
 import com.alex.Streaming.Task.BaseTask.BaseTask;
 import com.alex.Streaming.Watermark.TripDriveWatermark;
-import com.alex.Streaming.Function.TripDriveSampleWindowFunction;
-import com.alex.Streaming.Sink.TripDriveSink.TripDriveSampleToHBase;
+import com.alex.Streaming.Function.TripDrive.TripDriveSampleWindowFunction;
+import com.alex.Streaming.Sink.TripDrive.TripDriveSampleToHBase;
 import com.alex.Streaming.Utils.JsonParseUtil;
-import com.alex.Streaming.Bean.VehicleDataObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataObj;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.*;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

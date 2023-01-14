@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alex的星途车联网大数据平台</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/data_text.css">
+    <link rel="stylesheet" href="css/foundation-datepicker.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+	 $(window).load(function(){
+             $(".loading").fadeOut()
+            })
+	</script>
+	
+    <link rel="stylesheet" href="css/real-common.css">
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<!--header开始-->
+<div class="header">
+    <div class="header_logo fl">
+        <a href="#"><img src="images/header_logo.png" alt=""></a>
+    </div>
+    <div class="header_nav fl">
+        <ul>
+            <li>
+                <img src="images/nav_1.png" alt="">
+                <a href="index.html">车辆监控</a>
+            </li>
+            <li>
+                <img src="images/nav_2.png" alt="">
+                <a href="#">电子围栏</a>
+            </li>
+            <li>
+                <img src="images/nav_3.png" alt="">
+                <a href="#">政府监管</a>
+            </li>
+            <li>
+                <img src="images/nav_4.png" alt="">
+                <a href="#">自定义告警</a>
+            </li>
+            <li>
+                <img src="images/nav_5.png" alt="">
+                <a href="#">车载视频</a>
+            </li>
+            <li>
+                <img src="images/nav_6.png" alt="">
+                <a href="real-time-monitoring.html" class="nav_current">远程诊断故障实时监控</a>
+            </li>
+            <li>
+                <img src="images/nav_7.png" alt="">
+                <a href="bi.html">统计报表</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--header结束-->
+<body>
+	<div class="loading">
+      <div class="loadbox"> <img src="images/loading.gif">Loading... </div>
+    </div>
+<div class="data">
+    <div class="data-title">
+        <div class="title-center">远程诊断故障实时监控平台</div>
+    </div>
+    <div class="data-content">
+        <div class="con-left fl">
+            <div class="left-top">
+                <div class="info boxstyle">
+                    <div class="title">全国-车辆故障统计</div>
+                    <div class="info-main">
+						<ul>
+							<li><img src="images/info-img-1.png" alt=""><span>故障车辆数</span><p>231,352</p></li>
+							<li><img src="images/info-img-2.png" alt=""><span>故障次数</span><p>8,257</p></li>
+							<li><img src="images/info_6.png" alt=""><span>报警次数</span><p>138,457</p></li>
+							<li><img src="images/info-img-4.png" alt=""><span>全国故障等级占比</span><p>59.8%</p></li>
+						</ul>
+                    </div>
+                </div>
+                <div class="top-bottom boxstyle">
+                    <div class="title">全国故障等级占比</div>
+                    <div id="echarts_1" class="charts"></div>
+                </div>
+            </div>
+            <div class="left-bottom boxstyle">
+                <div class="title">故障类型占比</div>
+                <div id="echarts_2" class="charts"></div>
+            </div>
+        </div>
+        <div class="con-center fl">
+            <div class="map-num">
+                <p>全国故障车辆分布</p>
+                <div class="num">
+                    <span>1</span>
+                    <span>5</span>
+                    <span>9</span>
+                    <span>2</span>
+                    <span>6</span>
+                    <span>8</span>
+                </div>
+            </div>
+            <div class="cen-top map" id="map"></div>
+            <div class="cen-bottom boxstyle">
+                <div class="title">各车系故障次数趋势图</div>
+                <div id="echarts_3" class="charts"></div>
+            </div>
+        </div>
+        <div class="con-right fr">
+            <div class="right-top boxstyle">
+                <div class="title">车系故障等级占比</div>
+                <div id="echarts_4" class="charts"></div>
+            </div>
+            <div class="right-center boxstyle">
+                <div class="title">车辆故障TOP5</div>
+                <div id="echarts_5" class="charts"></div>
+            </div>
+            <div class="right-bottom boxstyle">
+                <div class="title">分车系实时故障车辆数</div>
+                <div id="echarts_6" class="charts"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="js/echarts.min.js"></script>
+<script src="js/china.js"></script>
+<script src="js/monitor-charts.js"></script>
+</html>

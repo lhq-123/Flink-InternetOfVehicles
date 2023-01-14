@@ -1,6 +1,6 @@
 package com.alex.Streaming.Utils;
 
-import com.alex.Streaming.Bean.DateFormatDefine;
+import com.alex.Streaming.Bean.SourceData.DateFormatDefine;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

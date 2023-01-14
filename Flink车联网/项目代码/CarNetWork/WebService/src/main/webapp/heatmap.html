@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:Access-Control-Allow-Origin="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" Access-Control-Allow-Origin: *>
+    <title>车联网系统·车辆数据热力图</title>
+</head>
+<body>
+<div id="contain" style="width: 100%;height: 1000px;"></div>
+</body>
+<!--<style type="text/css">
+
+    #contain img{
+        -webkit-filter: invert(100%) sepia(100%) grayscale(5%) saturate(3) hue-rotate(155deg) brightness(0.9);
+        filter: invert(100%) sepia(100%) grayscale(5%) saturate(3) hue-rotate(155deg) brightness(0.9);
+    }
+</style>-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2iGMRQXkFfHGrVBxQ7oC84Nx3D0UfyZd"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="extension/bmap.js"></script>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script>
+    var dom = document.getElementById("contain");
+    var myChart = echarts.init(dom);
+
+    // 请求热力图服务接口，已解决json跨域传递问题(后台解决)
+    var uploadedDataURL = "http://localhost:8021/heatmap/queryAllByCity";
+
+    $.ajax({
+        url: uploadedDataURL,
+        type: 'get',
+        dataType: 'json',
+        crossDomain: true,
+        data: {city:'杭州'},
+        success: function(vh) {
+            // 获取返回值对象json的key为data的热力图的点的数组
+            var jsonData = vh.data
+            var option = {
+                animation: false,
+                bmap: {
+                    center: [120.14952246157,30.265810415979],
+                    zoom: 16,
+                    roam: true
+                },
+                visualMap: {
+                    show: true,
+                    top: 'top',
+                    min: 0,
+                    max: 5,
+                    seriesIndex: 0,
+                    calculable: true,
+                    inRange: {
+                        color: ['blue', 'blue', 'green', 'yellow', 'red']
+                    }
+                },
+                series: [{
+                    type: 'heatmap',
+                    coordinateSystem: 'bmap',
+                    data: jsonData,
+                    pointSize: 5,
+                    blurSize: 6
+                }]
+            };
+            myChart.setOption(option,true);
+
+            var map = myChart.getModel().getComponent('bmap').getBMap();
+            map.addControl(new BMap.MapTypeControl());
+        }
+    });
+</script>
+</html>

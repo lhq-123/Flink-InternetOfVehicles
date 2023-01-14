@@ -1,0 +1,1 @@
+import '../data/map/test-data.json'

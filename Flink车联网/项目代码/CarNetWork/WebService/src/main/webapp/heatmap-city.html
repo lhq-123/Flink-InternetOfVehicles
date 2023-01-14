@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:Access-Control-Allow-Origin="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8" Access-Control-Allow-Origin: *>
+	<title>echarts-heatmap</title>
+</head>
+<body>
+<div id="bmap" style="width: 100%;height: 1000px;"></div>
+</body>
+<!--<style type="text/css">
+
+    #contain img{
+        -webkit-filter: invert(100%) sepia(100%) grayscale(5%) saturate(3) hue-rotate(155deg) brightness(0.9);
+        filter: invert(100%) sepia(100%) grayscale(5%) saturate(3) hue-rotate(155deg) brightness(0.9);
+    }
+</style>-->
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2iGMRQXkFfHGrVBxQ7oC84Nx3D0UfyZd"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="extension/bmap.js"></script>
+<script src="js/jQuery.js"></script>
+<script type="text/javascript" >
+	// var dom = document.getElementById("map");
+	// var myChart = echarts.init(dom);
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('bmap'));
+	var uploadedDataURL = "http://localhost:8021/heatmap/queryAllByCity";
+	$.getJSON(uploadedDataURL,{"city":"武汉"}, function (data) {
+	// $.getJSON('data/map/hangzhou-tracks.json', function (data) {
+	// 	var points = [].concat.apply([], data.map(function (track) {
+	// 		return track.map(function (seg) {
+	// 			return seg.coord.concat([1]);
+	// 		});
+	// 	}));
+		// 获取返回值对象json的key为data的热力图的点的数组
+		var jsonData = data.data
+		var option = {
+			animation: false,
+			bmap: {
+				// 武汉:114.07508325000002, 30.628310142147093
+				center: [114.07508325000002, 30.628310142147093],
+				zoom: 16,
+				roam: true
+			},
+			visualMap: {
+				show: true,
+				top: 'top',
+				min: 0,
+				max: 5,
+				seriesIndex: 0,
+				calculable: true,
+				inRange: {
+					color: ['blue', 'blue', 'green', 'yellow', 'red']
+				}
+			},
+			series: [{
+				type: 'heatmap',
+				coordinateSystem: 'bmap',
+				data: jsonData,
+				pointSize: 5,
+				blurSize: 6
+			}]
+		};
+		myChart.setOption(option,true);
+
+		var map = myChart.getModel().getComponent('bmap').getBMap();
+		map.addControl(new BMap.MapTypeControl());
+	});
+</script>
+</html>

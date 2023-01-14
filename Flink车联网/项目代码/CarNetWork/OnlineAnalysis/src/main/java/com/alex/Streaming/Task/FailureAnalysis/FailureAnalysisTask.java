@@ -1,15 +1,15 @@
 package com.alex.Streaming.Task.FailureAnalysis;
 
-import com.alex.Streaming.Bean.FailureAnalysisDataObj;
-import com.alex.Streaming.Bean.FailureAnalysisModel;
-import com.alex.Streaming.Function.AsyncHttpQueryFunction;
-import com.alex.Streaming.Function.FailureAnalysisVehicleInfoRedisFunction;
-import com.alex.Streaming.Function.FailureAnalysisVehicleMapMysqlFunction;
-import com.alex.Streaming.Function.FailureAnalysisWindowFunction;
+import com.alex.Streaming.Bean.FailureAnalysis.FailureAnalysisDataObj;
+import com.alex.Streaming.Bean.FailureAnalysis.FailureAnalysisModel;
+import com.alex.Streaming.Function.FailureAnalysis.AsyncHttpQueryFunction;
+import com.alex.Streaming.Function.FailureAnalysis.FailureAnalysisVehicleInfoRedisFunction;
+import com.alex.Streaming.Function.FailureAnalysis.FailureAnalysisVehicleMapMysqlFunction;
+import com.alex.Streaming.Function.FailureAnalysis.FailureAnalysisWindowFunction;
 import com.alex.Streaming.Task.BaseTask.BaseTask;
 import com.alex.Streaming.Source.MysqlFailureAnalysisVehicleInfoSource;
 import com.alex.Streaming.Utils.JsonParsePartUtil;
-import com.alex.Streaming.Bean.VehicleDataPartObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataPartObj;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.AsyncDataStream;

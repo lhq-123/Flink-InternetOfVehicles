@@ -1,6 +1,6 @@
 package com.alex.Streaming.Watermark;
 
-import com.alex.Streaming.Bean.VehicleDataObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataObj;
 import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks;
 import org.apache.flink.streaming.api.watermark.Watermark;
 

@@ -1,6 +1,6 @@
 package com.alex.Streaming.Utils;
 
-import com.alex.Streaming.Bean.VehicleDataPartObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataPartObj;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

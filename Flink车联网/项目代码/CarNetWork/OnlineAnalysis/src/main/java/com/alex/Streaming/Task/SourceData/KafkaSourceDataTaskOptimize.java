@@ -1,10 +1,10 @@
 package com.alex.Streaming.Task.SourceData;
 
 import com.alex.Streaming.Task.BaseTask.BaseTask;
-import com.alex.Streaming.Sink.SourceDataSink.ToHBaseDetailSinkOptimize;
-import com.alex.Streaming.Sink.SourceDataSink.ToHBaseSinkOptimize;
+import com.alex.Streaming.Sink.SourceData.ToHBaseDetailSinkOptimize;
+import com.alex.Streaming.Sink.SourceData.ToHBaseSinkOptimize;
 import com.alex.Streaming.Utils.JsonParseUtil;
-import com.alex.Streaming.Bean.VehicleDataObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataObj;
 import org.apache.commons.lang.StringUtils;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStream;

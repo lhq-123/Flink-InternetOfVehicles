@@ -1,16 +1,16 @@
 package com.alex.Streaming.Task.ElectricFence;
 
-import com.alex.Streaming.Bean.ElectricFenceModel;
-import com.alex.Streaming.Bean.ElectricFenceResultTmp;
-import com.alex.Streaming.Function.ElectricFenceModelFunction;
-import com.alex.Streaming.Function.ElectricFenceRulesFunction;
-import com.alex.Streaming.Function.ElectricFenceWindowFunction;
+import com.alex.Streaming.Bean.ElectricFence.ElectricFenceModel;
+import com.alex.Streaming.Bean.ElectricFence.ElectricFenceResultTmp;
+import com.alex.Streaming.Function.ElectricFence.ElectricFenceModelFunction;
+import com.alex.Streaming.Function.ElectricFence.ElectricFenceRulesFunction;
+import com.alex.Streaming.Function.ElectricFence.ElectricFenceWindowFunction;
 import com.alex.Streaming.Task.BaseTask.BaseTask;
-import com.alex.Streaming.Sink.ElectricFenceSink.ElectricFenceToMysql;
+import com.alex.Streaming.Sink.ElectricFence.ElectricFenceToMysql;
 import com.alex.Streaming.Source.MysqlElectricFenceSource;
 import com.alex.Streaming.Source.MysqlElectricFenceVehicleInfoSource;
 import com.alex.Streaming.Utils.JsonParsePartUtil;
-import com.alex.Streaming.Bean.VehicleDataPartObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataPartObj;
 import com.alex.Streaming.Watermark.ElectricFenceWatermark;
 import org.apache.commons.lang.StringUtils;
 import org.apache.flink.api.common.functions.MapFunction;

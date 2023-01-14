@@ -12,17 +12,15 @@
 
     <artifactId>OnlineAnalysis</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
     <dependencies>
+
         <!-- Flink依赖的java语言环境 -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-java</artifactId>
             <version>${flink.version}</version>
         </dependency>
+
         <!-- hadoop开发环境 start -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -39,6 +37,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
@@ -55,6 +54,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
@@ -66,6 +66,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- hadoop开发环境 end -->
         <!-- hive开发环境 -->
         <dependency>
@@ -95,12 +96,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- json解析 -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>${json.version}</version>
         </dependency>
+
         <!-- hbase开发环境 start-->
         <dependency>
             <groupId>org.apache.hbase</groupId>
@@ -113,6 +116,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!--phoenix -->
         <dependency>
             <groupId>org.apache.phoenix</groupId>
@@ -133,6 +137,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- flink 开发环境 start -->
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -165,18 +170,21 @@
             <version>${flink.version}</version>
         </dependency>
         <!-- flink 开发环境 end -->
+
         <!-- kafka开发环境客户端 -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
         </dependency>
+
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+
         <!-- log4j日志 start-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -188,7 +196,6 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-
         <!-- log4j日志 end-->
 
         <!-- mysql 连接驱动 -->
@@ -197,12 +204,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+
         <!-- mongodb连接驱动 -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
             <version>${mongodb-driver.version}</version>
         </dependency>
+
         <!-- redis客户端 -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -234,18 +243,21 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+
         <!-- geodesy地址位置查询 -->
         <dependency>
             <groupId>org.gavaghan</groupId>
             <artifactId>geodesy</artifactId>
             <version>${geodesy.version}</version>
         </dependency>
+
         <!-- google guava开发工具依赖-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>

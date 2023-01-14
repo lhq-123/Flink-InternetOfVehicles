@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.webservice.mapper.VehicleDataRateMapper">
+
+    <resultMap id="baseMap" type="com.alex.webservice.bean.VehicleDataRateBean">
+        <result column="series_no" jdbcType="VARCHAR" property="seriesNo" />
+        <result column="src_total_num" jdbcType="BIGINT" property="srcTotalNum" />
+        <result column="error_src_total_num" jdbcType="BIGINT" property="errorSrcTotalNum" />
+        <result column="data_accuracy" jdbcType="FLOAT" property="dataAccuracy" />
+        <result column="data_error_rate" jdbcType="FLOAT" property="dataErrorRate" />
+        <result column="process_date" jdbcType="TIMESTAMP" property="processDate" />
+    </resultMap>
+
+    <select id="queryAll" resultMap="baseMap">
+        select * from itcast_data_rate LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <select id="totalNum" resultType="java.lang.Long">
+        select count(1) from itcast_data_rate
+    </select>
+
+</mapper>

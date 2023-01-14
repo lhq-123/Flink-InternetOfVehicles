@@ -1,0 +1,37 @@
+# todo 配置关联mybatis映射文件
+mybatis:
+  mapperLocations: classpath:/com/alex/webservice/mapper/*.xml
+
+# todo 配置多个数据源属性：hive、mysql
+spring:
+  datasource:
+    # todo mysql主数据源，可关联mybatis
+    mysql:
+      type:
+        com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://Flink02:3306/vehicle_networking?useUnicode=true&useSSL=false&characterEncoding=utf-8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    # todo hive数据源
+    hive:
+      url: jdbc:hive2://Flink03:10000/vehicle_ods
+      type: com.alibaba.druid.pool.DruidDataSource
+      username: root
+      password: 123456
+      driver-class-name: org.apache.hive.jdbc.HiveDriver
+    # todo 连接池统一配置，应用到所有的数据源
+    commonconfig:
+      initialSize: 1
+      minIdle: 1
+      maxActive: 50
+      maxWait: 10000
+      timeBetweenEvictionRunsMillis: 10000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      filters: stat

@@ -1,6 +1,6 @@
 package com.alex.Streaming.Source;
 
-import com.alex.Streaming.Bean.FailureAnalysisModel;
+import com.alex.Streaming.Bean.FailureAnalysis.FailureAnalysisModel;
 import com.alex.Streaming.Utils.ConfigLoader;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;

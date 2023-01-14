@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-com">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alex的星途车联网大数据平台</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/data_text.css">
+    <link rel="stylesheet" href="css/foundation-datepicker.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--header开始-->
+<div class="header">
+    <div class="header_logo fl">
+        <a href="#"><img src="images/header_logo.png" alt=""></a>
+        <!--            <p1>Alex的星途车联网大数据平台</p1>-->
+    </div>
+    <div class="header_nav fl">
+        <ul>
+            <li>
+                <img src="images/nav_1.png" alt="">
+                <a href="index.html">车辆监控</a>
+            </li>
+            <li>
+                <img src="images/nav_2.png" alt="">
+                <a href="#">电子围栏</a>
+            </li>
+            <li>
+                <img src="images/nav_3.png" alt="">
+                <a href="#">政府监管</a>
+            </li>
+            <li>
+                <img src="images/nav_4.png" alt="">
+                <a href="#">自定义告警</a>
+            </li>
+            <li>
+                <img src="images/nav_5.png" alt="">
+                <a href="#">车载视频</a>
+            </li>
+            <li>
+                <img src="images/nav_6.png" alt="">
+                <a href="real-time-monitoring.html">远程诊断故障实时监控</a>
+            </li>
+            <li>
+                <img src="images/nav_7.png" alt="">
+                <a href="bi.html" class="nav_current">统计报表</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--header结束-->
+    <div class="dashboard">
+       <!-- <iframe src="http://node03:8088/superset/dashboard/1/"  style="height:100%; width:100%" ></iframe > -->
+
+		<iframe name="myframe" src="http://node03:8088/superset/dashboard/3/" frameborder="0" scrolling="auto" width="1530px" height="650px" onload="document.all['myframe'].style.height=myframe.document.body.scrollHeight" ></iframe>
+    </div>
+	</body>
+</html>

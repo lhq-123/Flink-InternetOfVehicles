@@ -1,6 +1,6 @@
 package com.alex.Streaming.Source;
 
-import com.alex.Streaming.Bean.ElectricFenceResultTmp;
+import com.alex.Streaming.Bean.ElectricFence.ElectricFenceResultTmp;
 import com.alex.Streaming.Utils.DateUtil;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;

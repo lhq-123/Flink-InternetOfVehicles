@@ -10,7 +10,7 @@
         </encoder>
     </appender>
     <!-- name值可以是包名或具体的类名：该包（包括子包）下的类或该类将采用此logger -->
-    <logger name="com.lhq.Streaming" level="INFO" additivity="false">
+    <logger name="com.alex.Streaming" level="INFO" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 

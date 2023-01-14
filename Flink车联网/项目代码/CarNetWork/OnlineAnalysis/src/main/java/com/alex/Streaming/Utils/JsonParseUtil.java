@@ -1,6 +1,6 @@
 package com.alex.Streaming.Utils;
 
-import com.alex.Streaming.Bean.VehicleDataObj;
+import com.alex.Streaming.Bean.SourceData.VehicleDataObj;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
