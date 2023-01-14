@@ -47,7 +47,6 @@
         <flink_hbase.version>1.10.3</flink_hbase.version>
         <scala.binary.version>2.12</scala.binary.version>
         <phoenix.version>5.0.0-HBase-2.0</phoenix.version>
-        <mongodb-driver.version>3.4.2</mongodb-driver.version>
         <mybatis-spring.version>2.1.3</mybatis-spring.version>
         <httpasyncclient.version>4.1.4</httpasyncclient.version>
         <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
@@ -56,5 +55,7 @@
         <flink_connector_file.version>1.11.6</flink_connector_file.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+        <!--<mongodb-driver.version>3.4.2</mongodb-driver.version>-->
     </properties>
+
 </project>

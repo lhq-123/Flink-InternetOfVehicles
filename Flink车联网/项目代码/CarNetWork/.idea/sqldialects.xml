@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Script/offline/1.动态监测/1.临时表中间表资料/sql/1.dy_upload_car_daily_count_tmp.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Script/offline/1.动态监测/1.临时表中间表资料/sql/2.dy_upload_car_month_count_tmp.sql" dialect="MySQL" />
+  </component>
+</project>

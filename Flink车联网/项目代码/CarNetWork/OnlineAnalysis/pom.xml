@@ -141,32 +141,32 @@
         <!-- flink 开发环境 start -->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-java_2.12</artifactId>
+            <artifactId>flink-streaming-java_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-filesystem_2.12</artifactId>
+            <artifactId>flink-connector-filesystem_${scala.version}</artifactId>
             <version>${flink_connector_file.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka_2.12</artifactId>
+            <artifactId>flink-connector-kafka_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-hbase_2.12</artifactId>
+            <artifactId>flink-hbase_${scala.version}</artifactId>
             <version>${flink_hbase.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-statebackend-rocksdb_2.12</artifactId>
+            <artifactId>flink-statebackend-rocksdb_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-runtime-web_2.12</artifactId>
+            <artifactId>flink-runtime-web_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <!-- flink 开发环境 end -->
@@ -203,13 +203,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
-        </dependency>
-
-        <!-- mongodb连接驱动 -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver</artifactId>
-            <version>${mongodb-driver.version}</version>
         </dependency>
 
         <!-- redis客户端 -->

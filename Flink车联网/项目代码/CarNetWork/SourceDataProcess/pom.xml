@@ -12,10 +12,6 @@
 
     <artifactId>SourceDataProcess</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
     <dependencies>
         <!--Flink 开发依赖-->
     <dependency>
@@ -25,23 +21,23 @@
     </dependency>
     <dependency>
         <groupId>org.apache.flink</groupId>
-        <artifactId>flink-streaming-java_2.11</artifactId>
+        <artifactId>flink-streaming-java_${scala.version}</artifactId>
         <version>${flink.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.flink</groupId>
-        <artifactId>flink-clients_${scala.binary.version}</artifactId>
+        <artifactId>flink-clients_${scala.version}</artifactId>
         <version>${flink.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.flink</groupId>
-        <artifactId>flink-connector-kafka_2.11</artifactId>
+        <artifactId>flink-connector-kafka_${scala.version}</artifactId>
         <version>${flink.version}</version>
     </dependency>
         <!--Hadoop开发依赖-->
     <dependency>
         <groupId>org.apache.flink</groupId>
-        <artifactId>flink-hadoop-compatibility_2.11</artifactId>
+        <artifactId>flink-hadoop-compatibility_${scala.version}</artifactId>
         <version>${flink.version}</version>
     </dependency>
     <dependency>
