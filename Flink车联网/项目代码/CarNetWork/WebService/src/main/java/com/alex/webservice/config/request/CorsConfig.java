@@ -16,13 +16,13 @@ public class CorsConfig {
     private CorsConfiguration buildConfig() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        // todo 对所有地址都可以访问
+        //对所有地址都可以访问
         corsConfiguration.addAllowedOrigin("*");
-        // todo 跨域请求头
+        //跨域请求头
         corsConfiguration.addAllowedHeader("*");
-        // todo 关于请求方法
+        //关于请求方法
         corsConfiguration.addAllowedMethod("*");
-        // todo 跨域请求 允许获得同一个 session
+        //跨域请求 允许获得同一个 session
         // corsConfiguration.setAllowCredentials(true);
         return corsConfiguration;
     }

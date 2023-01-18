@@ -1,7 +1,7 @@
 package com.alex.webservice.service.impl;
 
 import com.alex.webservice.bean.VehicleDataRateBean;
-import com.alex.webservice.mapper.vehicleDataRateMapper;
+import com.alex.webservice.mapper.VehicleDataRateMapper;
 import com.alex.webservice.service.VehicleDataRateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class VehicleDataRateServiceImpl implements VehicleDataRateService {
     @Autowired
-    private vehicleDataRateMapper vehicleDataRateMapper;
+    private VehicleDataRateMapper VehicleDataRateMapper;
 
     @Override
     public List<VehicleDataRateBean> queryAll(int pageNo, int pageSize) {
@@ -26,11 +26,11 @@ public class VehicleDataRateServiceImpl implements VehicleDataRateService {
         } else {
             pageNo -= 1;
         }
-        return vehicleDataRateMapper.queryAll(pageNo * pageSize, pageSize);
+        return VehicleDataRateMapper.queryAll(pageNo * pageSize, pageSize);
     }
 
     @Override
     public Long totalNum() {
-        return vehicleDataRateMapper.totalNum();
+        return VehicleDataRateMapper.totalNum();
     }
 }

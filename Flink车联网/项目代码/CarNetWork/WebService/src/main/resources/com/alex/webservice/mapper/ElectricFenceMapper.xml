@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.webservice.mapper.ElectricFenceMapper">
+
+    <select id="queryAll" resultType="com.alex.webservice.bean.ElectricFenceBean">
+        select * from electric_fence LIMIT #{pageNo},#{pageSize}
+    </select>
+
+    <select id="totalNum" resultType="java.lang.Long">
+        select count(1) from electric_fence
+    </select>
+
+</mapper>

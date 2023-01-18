@@ -13,9 +13,8 @@ import java.util.Map;
 
 /**
  * @author Alex_liu
- * @commpany vehicle
- * @Date 2022/9/16 1:33
- * @Description TODO 编写mysql测试接口，service实现类
+ * @Date 2023-01-15 1:33
+ * @Description 编写mysql测试接口，service实现类
  */
 @Service
 public class MySqlServiceImpl implements MySqlService {

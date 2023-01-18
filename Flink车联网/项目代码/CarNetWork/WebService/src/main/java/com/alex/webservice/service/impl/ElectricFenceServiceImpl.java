@@ -10,9 +10,8 @@ import java.util.List;
 
 /**
  * @author Alex_liu
- * @commpany vehicle
- * @Date 2022/9/16 2:05
- * @Description TODO 电子围栏后台数据服务接口，服务实现类
+ * @Date 2023-01-15 2:05
+ * @Description 电子围栏后台数据服务接口，服务实现类
  */
 @Service
 public class ElectricFenceServiceImpl implements ElectricFenceService {

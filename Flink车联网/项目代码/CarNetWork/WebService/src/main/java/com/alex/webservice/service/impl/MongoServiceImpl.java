@@ -8,9 +8,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author Alex_liu
- * @commpany vehicle
- * @Date 2022/9/16 1:39
- * @Description TODO 编写mongo测试接口，service实现类
+ * @Date 2023-01-15 1:39
+ * @Description 编写mongo测试接口，service实现类
  */
 @Service
 public class MongoServiceImpl implements MongoService {

@@ -1,0 +1,107 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "com.alex.webservice.config.properties.DataSourceProperties",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig",
+      "type": "com.alex.webservice.config.properties.DataSourceCommonProperties",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.datasource.commonconfig",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.filters",
+      "type": "java.lang.String",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.mapper-locations",
+      "type": "java.lang.String",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.max-open-prepared-statements",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.pool-prepared-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.test-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.time-between-eviction-runs-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.type-alias-package",
+      "type": "java.lang.String",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.commonconfig.validation-query",
+      "type": "java.lang.String",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceCommonProperties"
+    },
+    {
+      "name": "spring.datasource.hive",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceProperties"
+    },
+    {
+      "name": "spring.datasource.mysql",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.alex.webservice.config.properties.DataSourceProperties"
+    }
+  ],
+  "hints": []
+}
