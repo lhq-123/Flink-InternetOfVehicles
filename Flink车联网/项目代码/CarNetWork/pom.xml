@@ -13,6 +13,7 @@
         <module>OnlineAnalysis</module>
         <module>OfflineAnalysis</module>
         <module>WebService</module>
+        <module>VehicleMonitoring</module>
 
     </modules>
     <packaging>pom</packaging>
@@ -28,6 +29,7 @@
         <jedis.version>2.9.0</jedis.version>
         <log4j.version>2.14.0</log4j.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <spark.version>3.2.2</spark.version>
         <flink.version>1.13.0</flink.version>
         <json.version>20190722</json.version>
         <mysql.version>8.0.29</mysql.version>
