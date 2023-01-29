@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CarNetWork.iml" filepath="$PROJECT_DIR$/CarNetWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OfflineAnalysis/OfflineAnalysis.iml" filepath="$PROJECT_DIR$/OfflineAnalysis/OfflineAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineAnalysis/OnlineAnalysis.iml" filepath="$PROJECT_DIR$/OnlineAnalysis/OnlineAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SourceDataProcess/SourceDataProcess.iml" filepath="$PROJECT_DIR$/SourceDataProcess/SourceDataProcess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VehicleMonitoring/VehicleMonitoring.iml" filepath="$PROJECT_DIR$/VehicleMonitoring/VehicleMonitoring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebService/WebService.iml" filepath="$PROJECT_DIR$/WebService/WebService.iml" />
+    </modules>
+  </component>
+</project>

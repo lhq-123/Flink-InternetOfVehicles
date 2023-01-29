@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="OnlineAnalysis" />
+        <module name="VehicleMonitoring" />
+        <module name="WebService" />
+        <module name="SourceDataProcess" />
+        <module name="OfflineAnalysis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CarNetWork" target="1.8" />
+      <module name="OfflineAnalysis" target="1.8" />
+      <module name="OnlineAnalysis" target="1.8" />
+      <module name="SourceDataProcess" target="1.8" />
+      <module name="VehicleMonitoring" target="1.8" />
+      <module name="WebService" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -61,9 +61,6 @@ public interface Constants{
     String FIELD_AREA_ID = "areaId";
     String FIELD_AREA_NAME = "areaName";
 
-
-
-
     /**
      * 任务相关的常量
      */
